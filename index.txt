@@ -1,21 +1,17 @@
-vCard - Personal Portfolio
+Dr. Danushka Liyanage
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+alt = Danushka Liyanage
+Researcher
 
 Show Contacts
 
 Email
-richard@example.com
+danuliyanage90@gmail.com
 
 Phone
-+1 (213) 352-2795
-
-Birthday
-June 23, 1982
++61 49 8 787 988
 
 Location
 Sacramento, California, USA
@@ -28,13 +24,22 @@ Portfolio
 Blog
 Contact
 
-# about
+# About me
 
-About me
+Post Doctoral Research Associate  
+School of Computer Science, University of Sydney, Australia
 
-I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+Hello! I am Danushka Liyanage, a postdoctoral research associate at the School of Computer Science in the University of Sydney, Australia. I recently completed my PhD in Information Technology at Monash University, Australia.
 
-My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+My doctoral thesis, titled "Quantitative Decision-Making for Automated Software Testing," explores novel statistical techniques to determine the achieved and attainable progress of an automated software testing campaign, commonly known as Fuzzing.
+
+## Professional Experience
+
+I bring over 4 years of industry experience as a Data Scientist in sectors such as Telecommunication, Apparel, and Fast Moving Consumer Goods (FMCG). As a big data and machine learning enthusiast, I am passionate about exploring and leveraging statistics, mathematics, and computer science to find solutions to real-world problems by unraveling valuable insights from data.
+
+## Education
+
+I completed my Bachelor's Degree in Industrial Statistics at the University of Colombo, Sri Lanka, in 2015. I was honored with the gold medal for achieving the top position in my class.
 
 
 ## service
