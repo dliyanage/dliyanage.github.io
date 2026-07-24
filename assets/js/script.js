@@ -97,36 +97,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const navigationLinks = qa('[data-nav-link]');
   const pages = qa('[data-page]');
 
+  // Activate a page by its data-page name. Also syncs the URL hash so tabs are
+  // deep-linkable (e.g. .../#dashboards opens the Dashboards tab directly).
+  function activatePage(name, opts = {}) {
+    const target = (name || '').trim().toLowerCase();
+    const matchedPage = pages.find(p => (p.dataset.page || '').trim().toLowerCase() === target);
+    if (!matchedPage) return false;
+
+    navigationLinks.forEach(l => l.classList.remove('active'));
+    pages.forEach(p => p.classList.remove('active'));
+
+    matchedPage.classList.add('active');
+    const matchedLink = navigationLinks.find(l => l.textContent.trim().toLowerCase() === target);
+    if (matchedLink) matchedLink.classList.add('active');
+
+    if (opts.updateHash !== false && window.location.hash !== '#' + target) {
+      history.replaceState(null, '', '#' + target);
+    }
+    if (opts.scroll !== false) window.scrollTo(0, 0);
+    return true;
+  }
+
   if (navigationLinks.length && pages.length) {
     navigationLinks.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
-        const linkText = this.textContent.trim().toLowerCase();
-
-        // clear all
-        navigationLinks.forEach(l => l.classList.remove('active'));
-        pages.forEach(p => p.classList.remove('active'));
-
-        // find page by matching data-page (trim + lower)
-        const matchedPage = pages.find(p => (p.dataset.page || '').trim().toLowerCase() === linkText);
-
-        if (matchedPage) {
-          matchedPage.classList.add('active');
-          this.classList.add('active');
-          window.scrollTo(0, 0);
-        } else {
-          console.warn(`No page matched for nav link "${linkText}". Check your data-page values.`);
-        }
+        activatePage(this.textContent.trim().toLowerCase());
       });
     });
+
+    // Respond to back/forward navigation and manually edited hashes
+    window.addEventListener('hashchange', () => {
+      const name = window.location.hash.replace(/^#/, '');
+      if (name) activatePage(name, { updateHash: false });
+    });
+
+    // On load: open the tab named in the URL hash, otherwise the first tab
+    const initial = window.location.hash.replace(/^#/, '');
+    if (!initial || !activatePage(initial, { updateHash: false, scroll: false })) {
+      const firstName = (pages[0].dataset.page || '').trim().toLowerCase();
+      activatePage(firstName, { updateHash: false, scroll: false });
+    }
   } else {
     console.warn('Navigation setup incomplete. Found navigationLinks:', navigationLinks.length, 'pages:', pages.length);
-  }
-
-  // If no page is active, activate the first one (graceful default)
-  if (pages.length && !pages.some(p => p.classList.contains('active'))) {
-    pages[0].classList.add('active');
-    if (navigationLinks[0]) navigationLinks[0].classList.add('active');
-    console.info('No active page found — defaulted to first page.');
   }
 });
