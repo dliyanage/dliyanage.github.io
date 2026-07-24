@@ -154,6 +154,10 @@
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Dashboards</button>
+          </li>
           <!--
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
@@ -389,6 +393,88 @@
 
       </article>
 
+
+      <!--
+        - #DASHBOARDS
+      -->
+
+      <article class="dashboards" data-page="dashboards">
+
+        <header>
+          <h2 class="h2 article-title">Dashboards</h2>
+        </header>
+
+        <section class="about-text">
+          <h3 class="h3 powerbi-title">Australian University R&amp;D Income &amp; Staff Data (2020&ndash;2024)</h3>
+          <p class="powerbi-date">Published July 2026</p>
+          <p>
+            An interactive Power BI report exploring the research performance and academic staffing of Australian
+            universities from 2020&ndash;2024, built on two publicly available Australian Government datasets. It brings
+            together two views &mdash; R&amp;D Income and Staff Data &mdash; with filters to slice by institution, state,
+            year, cohort, income category and FTE.
+          </p>
+        </section>
+
+        <section class="powerbi">
+          <div class="powerbi-embed">
+            <iframe title="AUS Uni Research Performance 2020-2024"
+              src="https://app.powerbi.com/reportEmbed?reportId=5463fc6d-ae77-47ed-9500-c5875cc6ac8b&autoAuth=true&ctid=92983444-49fd-45ed-9453-d46c52a0f47f"
+              frameborder="0" allowFullScreen="true"></iframe>
+          </div>
+          <p class="powerbi-open">
+            <a href="https://app.powerbi.com/reportEmbed?reportId=5463fc6d-ae77-47ed-9500-c5875cc6ac8b&autoAuth=true&ctid=92983444-49fd-45ed-9453-d46c52a0f47f"
+              target="_blank" rel="noopener noreferrer">
+              Open the report in a new tab
+              <ion-icon name="open-outline"></ion-icon>
+            </a>
+          </p>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+            </div>
+            <h3 class="h3">About the data</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">R&amp;D Income
+                <a href="https://www.education.gov.au/research-block-grants/resources/research-income-time-series"
+                  class="item-link" target="_blank" rel="noopener noreferrer" title="Access the source data">
+                  <ion-icon name="link-outline" style="color: #FFD600;"></ion-icon>
+                </a>
+              </h4>
+              <span>Department of Education &mdash; Research Block Grants</span>
+              <p class="timeline-text" style="color: #d4cdcd;">
+                Built from the Research Income Time Series (2020&ndash;2024 inclusive) for all Australian universities,
+                using the <em>Summary by Category</em> tab. Charts and filters cover income categories, institutions,
+                state, years and cohort.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Staff Data
+                <a href="https://www.education.gov.au/higher-education-statistics/resources/2024-staff-pivot-table"
+                  class="item-link" target="_blank" rel="noopener noreferrer" title="Access the source data">
+                  <ion-icon name="link-outline" style="color: #FFD600;"></ion-icon>
+                </a>
+              </h4>
+              <span>Department of Education &mdash; 2024 Staff Pivot Table</span>
+              <p class="timeline-text" style="color: #d4cdcd;">
+                Built from the Staff Pivot Table (2020&ndash;2024), filtered to academic staff on Teaching &amp;
+                Research or Research Only functions, in academic organisational units, on full-time or fractional
+                full-time contracts (excluding non-academic classification grades). Charts and filters cover years,
+                FTE, institution and state.
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+      </article>
 
 
       <!--

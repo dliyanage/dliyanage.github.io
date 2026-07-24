@@ -1880,3 +1880,64 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/**
+ * DASHBOARDS / POWER BI EMBED
+ */
+
+.dashboards .about-text p { margin-bottom: 15px; }
+
+.powerbi { margin-bottom: 30px; }
+
+.powerbi-embed {
+  position: relative;
+  width: 100%;
+  /* Power BI report native size is 1140 x 541.25 */
+  aspect-ratio: 1140 / 541.25;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--jet, #383838);
+  background: var(--border-gradient-onyx, #1f1f1f);
+}
+
+.powerbi-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1 / 1) {
+  .powerbi-embed { height: 0; padding-bottom: 47.48%; }
+}
+
+.powerbi-title {
+  margin-bottom: 4px;
+  color: var(--white-2, #fafafa);
+}
+
+.powerbi-date {
+  font-size: var(--fs-7, 14px);
+  font-weight: var(--fw-300, 300);
+  color: var(--light-gray-70, #a0a0a0);
+  margin-bottom: 15px;
+}
+
+.powerbi-open {
+  margin-top: 14px;
+  text-align: right;
+  font-size: var(--fs-6, 15px);
+}
+
+.powerbi-open a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--orange-yellow-crayola, #ffdb70);
+}
+
+.powerbi-open ion-icon {
+  font-size: 16px;
+}
